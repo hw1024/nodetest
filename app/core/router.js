@@ -1,5 +1,5 @@
-var ParseDns = require('./parse_dns.js'),
-	MainIndex = require('./main_index.js');
+var ParseDns = require('../controller/parse_dns.js'),
+	MainIndex = require('../controller/main_index.js');
 exports.router = function(res, req, pathname) {
 	switch (pathname) {
 		case "/parse":

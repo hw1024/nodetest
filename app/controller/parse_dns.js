@@ -1,5 +1,3 @@
-var dns = require('dns'),    //DNS查询
-	querystring = require('querystring'); //字符串处理
 exports.parseDns = function (res, req) {
 	var postData = '';
 	req.addListener("data", function(postDataChunk) {
@@ -23,8 +21,8 @@ exports.parseDns = function (res, req) {
 	})
 }
 function getDns(postData, callback) {
-	var domain = querystring.parse(postData).search_dns;
-	dns.resolve(domain, function(err, addresses) {
+	var domain = lib.querystring.parse(postData).search_dns;
+	lib.dns.resolve(domain, function(err, addresses) {
 		if (!addresses) {
 			addresses = ['不存在域名']
 		}
